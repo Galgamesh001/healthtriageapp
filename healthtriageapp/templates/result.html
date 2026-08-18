@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthGuide — Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <h1>HealthGuide</h1>
+
+        {% if red_flag and red_flag_category == "self_harm" %}
+        <div class="notice crisis">
+            <strong>You matter, and support is available right now.</strong>
+            <p>What you've described suggests you may be going through something
+               very difficult. Please reach out to a crisis line — they're free,
+               confidential, and staffed by people trained to help.</p>
+            <ul>
+                <li><strong>UK:</strong> Samaritans — call 116 123 (free, 24/7)</li>
+                <li><strong>US:</strong> 988 Suicide & Crisis Lifeline — call or text 988</li>
+                <li><strong>International:</strong> findahelpline.com lists crisis lines by country</li>
+            </ul>
+            <p>If you're in immediate danger, please call emergency services
+               (999 in the UK, 911 in the US) or go to your nearest A&E/ER.</p>
+        </div>
+
+        {% elif red_flag %}
+        <div class="notice urgent">
+            <strong>⚠️ Seek urgent medical attention.</strong>
+            <p>Something in what you described may need immediate professional care.
+               Please contact emergency services or go to the nearest emergency department.</p>
+        </div>
+
+        {% elif level == "urgent" %}
+        <div class="notice urgent">
+            <strong>🔴 Seek urgent medical attention.</strong>
+            <p>Based on the severity you selected, this warrants prompt professional evaluation.</p>
+        </div>
+
+        {% elif level == "contact" %}
+        <div class="notice caution">
+            <strong>🟡 Consider contacting a healthcare professional.</strong>
+            <p>Your symptoms have lasted a while — a professional assessment would help
+               rule out anything that needs treatment.</p>
+        </div>
+
+        {% else %}
+        <div class="notice">
+            <strong>🟢 Monitor at home for now.</strong>
+            <p>Nothing here suggests urgency, but this isn't a diagnosis. Contact a
+               healthcare professional if things change or don't improve.</p>
+        </div>
+        {% endif %}
+
+        <p><em>You entered:</em> "{{ symptoms_text }}"</p>
+
+        <a href="/">← Start over</a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Health Triage</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Health Triage</h1>
+
+        <p class="subtitle">
+            A health-triage prototype designed to help you understand
+            what your next step might be.
+        </p>
+
+        <div class="notice">
+            <strong>Important:</strong>
+            HealthTriage is an educational prototype and does not
+            diagnose medical conditions or replace a healthcare professional.
+        </div>
+
+       <section class="card">
+    <h2>What are you experiencing?</h2>
+    <p>Describe your symptoms in your own words.</p>
+
+    <form action="/check" method="POST">
+        <textarea 
+            name="symptoms" 
+            rows="4" 
+            placeholder="e.g. I've had a headache since yesterday and feel slightly nauseous"
+            required
+        ></textarea>
+
+        <button type="submit">Continue</button>
+    </form>
+</section>
+
+    </main>
+
+</body>
+</html>

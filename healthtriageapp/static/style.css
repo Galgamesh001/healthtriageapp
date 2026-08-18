@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f8;
+    color: #1f2933;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 60px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #52606d;
+    line-height: 1.6;
+}
+
+.notice {
+    margin: 30px 0;
+    padding: 15px;
+    background: #fff8e1;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd2d9;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+.notice.urgent {
+    background: #fde8e8;
+    border-left: 4px solid #e02424;
+}
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+fieldset label {
+    display: block;
+    margin: 6px 0;
+}
+
+.notice.caution {
+    background: #fff3cd;
+    border-left: 4px solid #d69e2e;
+}
+.notice.crisis {
+    background: #eef2ff;
+    border-left: 4px solid #4f46e5;
+}
+
+.notice.crisis ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
