@@ -13,7 +13,7 @@ medical judgement.
 2. A red-flag safety layer checks for language associated with
    medical emergencies (see `SOURCES.md`)
 3. If a red flag is detected, the user is immediately directed to
-   appropriate emergency guidance — bypassing further questions
+   appropriate emergency guidance  bypassing further questions
 4. Otherwise, the user answers two follow-up questions (severity,
    duration)
 5. A rule-based triage level is returned: monitor / contact a
@@ -23,7 +23,7 @@ medical judgement.
 
 This project explores whether a lightweight, transparent, rule-based
 system can meaningfully help people choose an appropriate level of
-care — while being explicit and honest about what such a system
+care  while being explicit and honest about what such a system
 can and cannot safely do.
 
 ## Tech stack
