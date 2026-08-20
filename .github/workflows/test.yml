@@ -13,7 +13,7 @@ jobs:
     # tests/) live under this subfolder, not the repo root.
     defaults:
       run:
-        working-directory: healthtriageapp/healthtriageapp
+        working-directory: healthtriageapp
     steps:
       - uses: actions/checkout@v4
 
