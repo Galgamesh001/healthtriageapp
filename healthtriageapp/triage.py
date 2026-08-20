@@ -59,22 +59,25 @@ def check_sepsis_combo(text):
 def check_red_flags(text):
     """Returns (True, category) on first match, else (False, None)."""
     text = text.lower()
-
     # Check sepsis first: combination rule + the one fixed phrase
     if "mottled skin" in text or check_sepsis_combo(text):
         return True, "sepsis"
-
     # Then check all the fixed-phrase categories
     for category, phrases in RED_FLAGS.items():
         for phrase in phrases:
             if phrase in text:
                 return True, category
-
     return False, None
 
 
 def determine_level(severity, duration):
     """Rule-based triage level from follow-up answers."""
+    # Normalize case the same way check_red_flags() does for its text input.
+    # Without this, "Severe" (any non-lowercase form) silently falls through
+    # to "monitor" instead of "urgent" — the wrong direction for a
+    # safety-critical default. See test_KNOWN_ISSUE_severity_is_case_sensitive.
+    if severity is not None:
+        severity = severity.lower()
     if severity == "severe":
         return "urgent"
     elif severity == "moderate" and duration == "more_than_3":
